@@ -1,0 +1,37 @@
+<div class="container">
+
+  <h1>ngSwitch Directive Examples</h1>
+
+  <!-- Simple ngSwitch Example -->
+  <b> Simple ngSwitch Example</b>
+  <ul [ngSwitch]="user">
+    <li *ngSwitchCase="'Ramesh'">Hi Ramesh</li>
+    <li *ngSwitchCase="'Tony'">Hi Tony</li>
+    <li *ngSwitchCase="'Tom'">Ho Tom</li>
+    <li *ngSwitchDefault>No user found</li>
+  </ul>
+
+  <!-- ngSwitch and ngSwitchCase - even odd number example -->
+  <b> ngSwitch and ngSwitchCase - even odd number example</b>
+  <div *ngFor="let number of numbers">
+    <div ngSwitch="{{number % 2}}"> 
+      <div *ngSwitchCase="'0'">{{number}} - Even number.</div>
+      <div *ngSwitchCase="'1'">{{number}} - Odd number.</div>
+      <div *ngSwitchDefault>Nothing Found.</div>
+    </div>
+  </div>
+
+  <!-- ngSwitch and ngSwitchCase - enum example -->
+  <b> ngSwitch and ngSwitchCase - enum example</b>
+  <div [ngSwitch]="day">
+    <b *ngSwitchCase="days.SUNDAY"> SUNDAY</b>
+    <b *ngSwitchCase="days.MONDAY"> MONDAY</b>
+    <b *ngSwitchCase="days.TUESDAY">TUESDAY</b>
+    <b *ngSwitchCase="days.WEDNESDAY">WEDNESDAY</b>
+    <b *ngSwitchCase="days.THURSDAY">THURSDAY</b>
+    <b *ngSwitchCase="days.FRIDAY">FRIDAY</b>
+    <b *ngSwitchCase="days.SATURDAY">SATURDAY</b>
+    <b *ngSwitchDefault>No Days</b>
+  </div>
+
+</div>

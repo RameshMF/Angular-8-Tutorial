@@ -1,0 +1,60 @@
+<div class="container">
+
+  <h1> ngFor Directive Examples</h1>
+
+  <!-- ngFor Directive with Table Example -->
+  <b> ngFor Directive with Table Example</b>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.emailId}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ngFor - simple example -->
+  <b> ngFor - simple example</b>
+  <ul>
+    <li *ngFor="let user of users">
+      {{user.firstName}}, {{user.lastName}}
+    </li>
+  </ul>
+
+  <!-- ngFor - variable ccope example -->
+  <b> ngFor - variable ccope example </b>
+  <ul>
+    <li *ngFor="let user of users" [type]="element">
+      {{user.firstName}}, {{user.lastName}}
+    </li>
+  </ul>
+
+  <!-- ngFor - Get the index of each element example -->
+  <b> ngFor - Get the index of each element example </b>
+  <ul>
+    <li *ngFor="let user of users; let i = index">
+      {{i}}. {{user.firstName}}, {{user.lastName}}
+    </li>
+  </ul>
+
+  <!-- ngFor - first and last variable example  -->
+  <b>ngFor - first and last variable example </b>
+  <div *ngFor="let user of users; let i = index; let f=first; let l=last;">
+    Row {{i}} : Name: {{user.firstName}} {{user.lastName}} , is first row: {{f}}, is last row: {{l}}
+  </div>
+
+  <!-- nfFor - even and odd variable example -->
+  <b>nfFor - even and odd variable example </b>
+  <div *ngFor="let user of users; let i = index; let e=even; let o=odd;">
+    Row {{i}} : Name: {{user.firstName}} {{user.lastName}} , is even row: {{e}}, is odd row: {{o}}
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="container">
+  <h1>ngif Examples</h1>
+  <!-- ngIf - Show this all the time -->
+  <b>ngIf - Show this all the time</b>
+  <p> *ngIf="show">Show this only if "show" is true</p>
+
+  <!-- ngIf - Avoiding "Cannot read property of undefined" errors -->
+  <b>ngIf - Avoiding "Cannot read property of undefined" errors</b>
+  <p *ngIf="user">
+    {{user.name}}
+  </p>
+
+  <!-- ngIf - Logical NOT (!) example -->
+  <b>ngIf - Logical NOT (!) example</b>
+  <p *ngIf="!show">
+    Show this only if "show" is NOT true
+  </p><br>
+
+  <!-- ngIf - Logical AND (&&) example -->
+  <b>ngIf - Logical AND (&&) example</b>
+  <p *ngIf="a && b">
+    Show this only if a AND b are true
+  </p><br>
+  <!-- ngIf - Logical OR (||) example -->
+  <b>ngIf - Logical OR (||) example</b>
+  <p *ngIf="a || b">
+    Show this only if a OR b is true
+  </p><br>
+
+  <!--  ngIf - Working with "else" Examples -->
+  <b> ngIf - Working with "else" Examples</b>
+  <div *ngIf="show; else notShow">
+    <p>
+      Show this only if "show" is true
+    </p>
+  </div>
+
+  <ng-template #notShow>
+    <p>
+      Show this only if "show" is not true
+    </p>
+  </ng-template>
+
+  <!-- NgIf with "then" example -->
+  <b>NgIf with "then" example</b>
+  <ng-template *ngIf="show;then showBlock; else notShowBlock">
+  </ng-template>
+
+  <ng-template #showBlock>
+    <p>
+      Show this only if "show" is true
+    </p>
+  </ng-template>
+
+  <ng-template #notShowBlock>
+    <p>
+      Show this only if "show" is not true
+    </p>
+  </ng-template>
+
+  <!-- ngIf and ngFor with Table example -->
+  <b>ngIf and ngFor with Table example</b>
+  <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th *ngIf="showActions">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.emailId}}</td>
+            <td *ngIf="showActions">
+                    <button>Delete</button>
+                    <button>Update</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
